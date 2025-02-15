@@ -150,3 +150,35 @@ html {
         height: 180px;
     }
 }
+
+/*backgrounds*/
+
+.bg {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates smooth scrolling effect */
+}
+
+/* Different Background Images */
+.bg1 {
+    background-image: url('bg1.jpg'); /* Replace with your image */
+}
+
+.bg2 {
+    background-image: url('bg2.jpg');
+}
+
+.bg3 {
+    background-image: url('bg3.jpg');
+}
+
+.bg4 {
+    background-image: url('bg4.jpg');
+}
+
+.bg5 {
+    background-image: url('bg5.jpg');
+}
