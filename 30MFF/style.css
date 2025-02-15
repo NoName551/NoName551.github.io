@@ -1,11 +1,3 @@
-
-body{
-    font-family:Helvetica,  "Trebuchet MS", Arial;
-    font-size: 40px;
-    color: rgb(83,8,153);
-}
-
-
 * {
     margin: 0;
     padding: 0;
@@ -48,13 +40,15 @@ p {
     padding: 10px;
 }
 
+
 /* Smooth Image Styling */
-img {
-    max-width: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-}
+    img[src="1.jpg"] {
+        width: 400px;
+        height: 600px;
+        float: left; /* Makes the image float to the left */
+        margin-right: 20px; /* Adds space between the image and text */
+        margin-bottom: 20px; /* Adds space below the image */
+    }
 
     img:hover {
         transform: scale(1.05);
