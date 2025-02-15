@@ -1,7 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display');
 
 body{
     font-family:Helvetica,  "Trebuchet MS", Arial;
     font-size: 40px;
     color: rgb(83,8,153);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0c0c0c;
+    color: #ffffff;
+    text-align: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Full-screen sections for smooth scrolling */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    font-size: 1.3rem;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    line-height: 1.8;
+    padding: 10px;
+}
+
+/* Smooth Image Styling */
+img {
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Specific Image Sizing */
+    img[src="1.jpg"] {
+        width: 400px;
+        height: 600px;
+    }
+
+    img[src="me.png"] {
+        width: 200px;
+        height: 200px;
+    }
+
+    img[src="book1.png"], img[src="book2.jpg"] {
+        width: 150px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    img[src="arrow.png"] {
+        width: 50px;
+        height: auto;
+    }
+
+/* Navigation Links */
+a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+    a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+/* Video Player */
+video {
+    width: 320px;
+    height: 240px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Button Styling */
+button {
+    background: none;
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    button:hover {
+        background: #ffcc00;
+        color: #0c0c0c;
+    }
+
+/* Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    img[src="1.jpg"] {
+        width: 300px;
+        height: 400px;
+    }
+
+    img[src="me.png"] {
+        width: 150px;
+        height: 150px;
+    }
+
+    video {
+        width: 250px;
+        height: 180px;
+    }
 }
