@@ -1,143 +1,54 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/customfont.ttf') format('truetype'); /* Path to the font file */
 }
 
-body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: #f5f5f5;
-    color: #111;
-    text-align: center;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+body, html {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Fullscreen Sections */
-section {
-    min-height: 100vh;
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Amatic SC", sans-serif;
+}
+
+/* Navbar */
+.w3-bar-item {
+    font-size: 24px;
+}
+
+/* Background Image */
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("bg1.jpg"); /* Make sure the image is in the same folder */
+    min-height: 90vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 50px;
-    font-size: 1.3rem;
-    max-width: 800px;
-    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Typography */
-h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+/* Text Styling */
+#title {
+    font-size: 100px;
 }
 
-p {
-    font-size: 1.5rem;
-    font-weight: 300;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 20px 0;
+#subtitle {
+    font-size: 60px;
 }
 
-/* High-Contrast Images */
-img {
-    max-width: 100%;
-    height: auto;
-    transition: opacity 0.3s ease-in-out;
+/* Menu Styling */
+.menu {
+    display: none;
 }
 
-    /* Circular Image Styling */
-    img[src="1.jpg"] {
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    img[src="me.png"] {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        object-fit: contain;
-    }
-
-    /* Subtle Hover Effect */
-    img:hover {
-        opacity: 0.8;
-    }
-
-/* Links - Minimalist Underline */
-a {
-    font-size: 1.2rem;
-    color: #111;
-    text-decoration: none;
-    border-bottom: 1px solid #111;
-    transition: 0.3s ease;
+.w3-container {
+    padding: 20px;
 }
 
-    a:hover {
-        color: #555;
-        border-bottom: 1px solid #555;
-    }
-
-/* Video Styling */
-video {
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-/* Spacing for Book Recommendations */
-img[src="book1.png"], img[src="book2.jpg"] {
-    width: 150px;
-    border-radius: 10px;
-    margin: 20px 10px;
-}
-
-/* Floating Arrow Indicator */
-img[src="arrow.png"] {
-    width: 50px;
-    margin-top: 20px;
-    opacity: 0.6;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(10px);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    img[src="1.jpg"] {
-        width: 350px;
-        height: 350px;
-    }
-
-    img[src="me.png"] {
-        width: 150px;
-        height: 150px;
-    }
-
-    video {
-        width: 90%;
-    }
+.w3-button {
+    font-size: 20px;
 }
