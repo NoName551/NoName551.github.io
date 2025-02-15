@@ -4,13 +4,8 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'CustomFont';
-    src: url('fonts/customfont.tff') format('tff');
-}
-
 body {
-    font-family: 'CustomFont', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #0c0c0c;
     color: #ffffff;
     text-align: center;
@@ -45,15 +40,12 @@ p {
     padding: 10px;
 }
 
-img[src="1.jpg"] {
-    width: 400px;
-    height: 600px;
-    float: left; /* Makes the image float to the left */
-    margin-right: 20px; /* Adds space between the image and text */
-    margin-bottom: 20px; /* Adds space below the image */
-    shape-outside: circle(); /* Creates a circular shape for text to wrap around */
-    border-radius: 50%; /* Makes the image itself circular */
-    object-fit: cover; /* Ensures the image fills the circular area */
+/* Smooth Image Styling */
+img {
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
 }
 
     img:hover {
@@ -149,36 +141,4 @@ html {
         width: 250px;
         height: 180px;
     }
-}
-
-/*backgrounds*/
-
-.bg {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Creates smooth scrolling effect */
-}
-
-/* Different Background Images */
-.bg1 {
-    background-image: url('bg1.jpg'); /* Replace with your image */
-}
-
-.bg2 {
-    background-image: url('bg2.jpg');
-}
-
-.bg3 {
-    background-image: url('bg3.jpg');
-}
-
-.bg4 {
-    background-image: url('bg4.jpg');
-}
-
-.bg5 {
-    background-image: url('bg5.jpg');
 }
