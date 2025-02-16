@@ -92,7 +92,7 @@ html {
     position: absolute; /* Absolute positioning */
     position: absolute;
     top: 55%;
-    left: 57%;
+    left: 55%;
     transform: translate(-35%, 65px);
     text-align: center; /* Center text */
     transition: color 0.3s ease; /* Smooth color transition on hover */
