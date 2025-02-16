@@ -28,8 +28,8 @@ html {
     color: #000000;
     padding: 20px; /* Optional: Add padding */
     position: absolute; /* Position relative to the nearest positioned ancestor */
-    top: 10px; /* 20px from the top of the screen */
-    right: 130px; /* 20px from the right of the screen */
+    top: 15px; /* 20px from the top of the screen */
+    right: 100px; /* 20px from the right of the screen */
     text-align: right; /* Align the text to the right */
 
     opacity: 0; /* Start with 0 opacity */
@@ -131,7 +131,7 @@ img {
 
 .resource-button {
     position: absolute; /* Positions it absolutely within its nearest positioned ancestor */
-    top: 88%; /* Adjust vertical position */
+    top: 90%; /* Adjust vertical position */
     left: 87%; /* Center horizontally */
     transform: translateX(-50%); /* Corrects for the centering effect */
     font-size: 1rem;
