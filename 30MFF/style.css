@@ -1,64 +1,242 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
-@font-face {
-    font-family: 'CustomFont';
-    src: url('fonts/customfont.ttf') format('truetype'); /* Path to the font file */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
 }
 
-.custom-bg {
-    background: url('1.jpg') no-repeat center center;
-    background-size: cover;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
-body, html {
-    height: 100%;
-    font-family: 'Inter', sans-serif;
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Amatic SC", sans-serif;
-}
-
-/* Navbar */
-.w3-bar-item {
-    font-size: 24px;
-}
-
-/* Background Image */
-.bgimg {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("bg1.jpg"); /* Make sure the image is in the same folder */
-    min-height: 90vh;
+/* Sections */
+.section {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Text Styling */
-#title {
-    font-size: 100px;
+.text {
+    font-size: 3rem;
+    color: #000000;
+    padding: 20px; /* Optional: Add padding */
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 10px; /* 20px from the top of the screen */
+    right: 130px; /* 20px from the right of the screen */
+    text-align: right; /* Align the text to the right */
+
+    opacity: 0; /* Start with 0 opacity */
+    transform: translateX(50px); /* Start slightly off-screen from the right */
+    animation: slideIn 1s ease-out forwards; /* 1s duration, ease-out timing */
 }
 
-#subtitle {
-    font-size: 60px;
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Start off the screen */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at its final position */
+    }
 }
 
-/* Menu Styling */
-.menu {
-    display: none;
+/* Background Colors */
+.hero {
+    background: url('main.png') no-repeat center center;
+    background-size: cover;
+    color: white;
 }
 
-.w3-container {
+.line1 {
+    background: url('line1.png') no-repeat center center;
+    background-size: cover;
+}
+
+.line2 {
+    background: url('line2.png') no-repeat center center;
+    background-size: cover;
+}
+
+.line3 {
+    background: url('line1.png') no-repeat center center;
+    background-size: cover;
+}
+
+.line4 {
+    background: url('line2.png') no-repeat center center;
+    background-size: cover;
+}
+
+.line5 {
+    background: url('line1.png') no-repeat center center;
+    background-size: cover;
+}
+
+
+.text-button {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1rem; /* Size of the text */
+    color: #000000; /* Text color */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute; /* Absolute positioning */
+    top: 486px; /* 50px from the top */
+    right: 609px; /* 30px from the right */
+    text-align: center; /* Center text */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+    .text-button:hover {
+        color: #b200ff; /* Change text color on hover */
+    }
+
+.speech-bubble {
+    position: relative;
+    background-color: white; /* Light pink background for the bubble */
+    border-radius: 50%; /* Full circle for the bubble */
     padding: 20px;
+    width: 300px; /* Set the size of the circle */
+    height: 300px; /* Set the size of the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers the text inside the circle */
+    font-size: 7rem;
+    color: #333;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    border: 2.5px solid #000;
+    text-align: center; /* Center the text */
+    margin: 20px;
+    overflow: hidden; /* Ensures that text doesn't overflow the circle */
 }
 
-.w3-button {
-    font-size: 20px;
+    /* Create the tail of the speech bubble */
+    .speech-bubble::before {
+        content: ''; /* Creates an empty element */
+        position: absolute; /* Position it relative to the speech bubble */
+        bottom: -20px; /* Moves it below the bubble */
+        left: 50%; /* Align the tail to the center */
+        transform: translateX(-50%); /* Centers the tail */
+        border-width: 20px; /* Size of the tail */
+        border-style: solid;
+        border-color: #ffcccb transparent transparent transparent; /* Triangle shape for the tail */
+    }
+
+    /* Styling for each <h2> inside the speech bubbles */
+    .speech-bubble h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem; /* Adjust font size to fit inside the circle */
+    }
+
+.line2 {
+    background: url('line2.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.letter-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    max-width: 800px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Inconsolata', monospace;
+}
+
+
+
+.sun-rays {
+    position: absolute;
+    top: 320%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.6), rgba(255, 255, 0, 0.2), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: sunPulse 3s infinite ease-in-out;
+    z-index: 0;
+    filter: blur(10px);
+}
+
+@keyframes sunPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+}
+
+.text-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.shape-box {
+    max-width: 700px;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    font-family: 'Inconsolata', monospace;
+    backdrop-filter: blur(10px);
+    color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box1 {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50% 50% 40% 60% / 60% 40% 70% 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.box2 {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 30% 70% 70% 30% / 50% 30% 70% 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.box3 {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 70% 30% 40% 60% / 40% 60% 30% 70%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.box4 {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50% 50% 50% 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
