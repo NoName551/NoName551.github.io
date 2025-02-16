@@ -91,8 +91,8 @@ html {
     cursor: pointer; /* Pointer cursor on hover */
     position: absolute; /* Absolute positioning */
     position: absolute;
-    top: 80%;
-    left: 60%;
+    top: 60%;
+    left: 55%;
     text-align: center; /* Center text */
     transition: color 0.3s ease; /* Smooth color transition on hover */
 }
@@ -132,7 +132,7 @@ img {
 
 .resource-button {
     position: absolute; /* Positions it absolutely within its nearest positioned ancestor */
-    top: 95%; /* Adjust vertical position */
+    top: 90%; /* Adjust vertical position */
     left: 87%; /* Center horizontally */
     transform: translateX(-50%); /* Corrects for the centering effect */
     font-size: 1rem;
