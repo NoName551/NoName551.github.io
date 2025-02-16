@@ -194,6 +194,21 @@ img {
 }
 
 
+.slider-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Inconsolata', monospace;
+}
+
+#styleSlider {
+    width: 150px;
+}
+
 .letter-container { /*the text is designed to be in a letter-like format*/
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
