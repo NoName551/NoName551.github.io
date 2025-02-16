@@ -30,7 +30,7 @@ This is where the actual coding happens.
 A. Structuring with HTML
 The index.html file organizes everything:
 Sections – Each thought/idea gets its own <div class="section"> so it’s easy to control.
-Text & Media – <h2> for main thoughts, <p> for details, and <img>/<video> for visuals.
+Text & Media – for main thoughts, for details, and images and video for visuals.
 Buttons & Links – Used for navigation and engagement (like “Find out more”).
 B. Styling with CSS
 The style.css file is where the design and visuals of the website are implemented:
