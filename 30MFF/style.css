@@ -90,8 +90,10 @@ html {
     border: none; /* Remove border */
     cursor: pointer; /* Pointer cursor on hover */
     position: absolute; /* Absolute positioning */
-    top: 80%; /* 50px from the top */
-    right: 60%; /* 30px from the right */
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    transform: translate(80%, 100px);
     text-align: center; /* Center text */
     transition: color 0.3s ease; /* Smooth color transition on hover */
 }
