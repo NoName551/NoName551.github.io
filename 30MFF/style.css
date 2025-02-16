@@ -90,8 +90,8 @@ html {
     border: none; /* Remove border */
     cursor: pointer; /* Pointer cursor on hover */
     position: absolute; /* Absolute positioning */
-    top: 550px; /* 50px from the top */
-    right: 500px; /* 30px from the right */
+    top: 650px; /* 50px from the top */
+    right: 400px; /* 30px from the right */
     text-align: center; /* Center text */
     transition: color 0.3s ease; /* Smooth color transition on hover */
 }
@@ -131,7 +131,7 @@ img {
 
 .resource-button {
     position: absolute; /* Positions it absolutely within its nearest positioned ancestor */
-    top: 90%; /* Adjust vertical position */
+    top: 95%; /* Adjust vertical position */
     left: 87%; /* Center horizontally */
     transform: translateX(-50%); /* Corrects for the centering effect */
     font-size: 1rem;
