@@ -6,6 +6,52 @@
     font-family: 'Inconsolata', monospace;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    z-index: 1000; /* Ensure the header stays on top */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center;
+}
+
+/* Home div styling */
+.home {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+    /* Styling for the home icon */
+    .home img {
+        width: 40px; /* Set the size of the home icon */
+        height: auto;
+        margin-right: 15px; /* Space between icon and text */
+    }
+
+    /* Home link styling */
+    .home a {
+        color: black;
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        /* Hover effect for links */
+        .home a:hover {
+            color: #E59BE9;
+            text-decoration: underline;
+        }
+
 /* Books1 section background styling */
 .books1 {
     width: 100vw;

@@ -11,6 +11,7 @@ document.addEventListener("scroll", function () {
     });
 });
 
+
 document.getElementById('scrollButton').addEventListener('click', function () {
     window.scrollBy(0, 100);  // Scroll down by 100px on each click
 });
