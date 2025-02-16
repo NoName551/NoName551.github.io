@@ -79,7 +79,7 @@ nav {
 }
 
     .book-images img {
-        max-width: 200px; /* Adjust image width */
+        max-width: 300px; /* Adjust image width */
         height: auto; /* Maintain aspect ratio */
         object-fit: contain;
         transition: transform 0.3s ease; /* Smooth hover effect */

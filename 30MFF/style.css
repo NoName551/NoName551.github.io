@@ -26,10 +26,10 @@ html {
 .text {
     font-size: 3rem;
     color: #000000;
-    padding: 20px; /* Optional: Add padding */
+    padding: 20px; /*Add padding */
     position: absolute; /* Position relative to the nearest positioned ancestor */
-    top: 15px; /* 20px from the top of the screen */
-    right: 100px; /* 20px from the right of the screen */
+    top: 15px; /* 15px from the top of the screen */
+    right: 100px; /* 100px from the right of the screen */
     text-align: right; /* Align the text to the right */
 
     opacity: 0; /* Start with 0 opacity */
@@ -124,9 +124,9 @@ img {
 
 /* Custom positioning of the image */
 #arrow-image {
-    position: absolute; /* Allows you to position the image absolutely */
-    top: 82%; /* Position 50% from the top */
-    left: 92%; /* Position 50% from the left */
+    position: absolute; /* Allows to position the image absolutely */
+    top: 82%; /* Position 82% from the top */
+    left: 92%; /* Position 92% from the left */
     transform: translate(-50%, -50%); /* Adjust the image to be centered exactly */
     z-index: 10; /* Ensure it's above other elements */
 }
@@ -158,7 +158,7 @@ img {
     align-items: center; /* Centers the text inside the circle */
     font-size: 7rem;
     color: #333;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
     border: 2.5px solid #000;
     text-align: center; /* Center the text */
     margin: 20px;
@@ -194,7 +194,7 @@ img {
 }
 
 
-.letter-container {
+.letter-container { /*the text is designed to be in a letter-like format*/
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 8px;
@@ -210,7 +210,7 @@ img {
 
 
 
-.sun-rays {
+.sun-rays { /*sun-like rays are added for better visualization*/
     position: absolute;
     top: 320%;
     left: 10%;
@@ -251,7 +251,7 @@ img {
     padding: 30px;
 }
 
-.shape-box {
+.shape-box { /*shapes of boxes for text added*/
     max-width: 700px;
     padding: 20px;
     text-align: center;
@@ -288,7 +288,7 @@ img {
 }
 
 
-.video-container {
+.video-container { /*to display the video in a more visually appealing format*/
     background-color: #E59BE9; 
     display: flex;
     justify-content: center; 
