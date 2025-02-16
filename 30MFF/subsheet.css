@@ -1,0 +1,44 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+/* Books1 section background styling */
+.books1 {
+    width: 100vw;
+    height: 100vh;
+    background: url('line1.png') no-repeat center center; /* Use your existing background */
+    background-size: cover; /* Make sure the background covers the entire section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .books1 h1 {
+        margin-bottom: 50px; /* Space between title and images */
+        font-size: 2rem;
+        color: black;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adding shadow to title text */
+    }
+
+/* Book images section */
+.book-images {
+    display: flex;
+    gap: 20px; /* Space between images */
+}
+
+    .book-images img {
+        max-width: 200px; /* Adjust image width */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: contain;
+        transition: transform 0.3s ease; /* Smooth hover effect */
+    }
+
+        .book-images img:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }

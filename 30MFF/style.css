@@ -90,7 +90,7 @@ html {
     border: none; /* Remove border */
     cursor: pointer; /* Pointer cursor on hover */
     position: absolute; /* Absolute positioning */
-    top: 486px; /* 50px from the top */
+    top: 500px; /* 50px from the top */
     right: 609px; /* 30px from the right */
     text-align: center; /* Center text */
     transition: color 0.3s ease; /* Smooth color transition on hover */
@@ -99,6 +99,50 @@ html {
     .text-button:hover {
         color: #b200ff; /* Change text color on hover */
     }
+
+.find-more {
+    position: absolute; /* Positions it relative to the nearest positioned ancestor */
+    top: 76%; /* Adjust vertical position */
+    left: 92%; /* Center horizontally */
+    transform: translateX(-50%); /* Centers the text */
+    font-size: 0.75rem; /* Adjust text size */
+    color: black; /* Text color */
+    font-family: 'Inconsolata', monospace; /* Font style */
+    text-align: center; /* Ensures the text stays centered */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+
+img {
+    width: 3%; /* Adjust the percentage to resize */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove inline display */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Custom positioning of the image */
+#arrow-image {
+    position: absolute; /* Allows you to position the image absolutely */
+    top: 82%; /* Position 50% from the top */
+    left: 92%; /* Position 50% from the left */
+    transform: translate(-50%, -50%); /* Adjust the image to be centered exactly */
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.resource-button {
+    position: absolute; /* Positions it absolutely within its nearest positioned ancestor */
+    top: 88%; /* Adjust vertical position */
+    left: 87%; /* Center horizontally */
+    transform: translateX(-50%); /* Corrects for the centering effect */
+    font-size: 1rem;
+    color: black; /* Text color */
+    font-family: 'Inconsolata', monospace; /* Change the font here */
+    white-space: nowrap; /* Ensures the text stays on one line */
+    border: none; /* Remove border */
+    background: none; /* Remove background */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
 
 .speech-bubble {
     position: relative;
@@ -243,10 +287,95 @@ html {
 
 
 .video-container {
-    background-color: #E59BE9; /* A purplish-pink color */
+    background-color: #E59BE9; 
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    height: 100vh; /* Full viewport height */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; /* full viewport height */
 }
 
+.line5 h2 {
+    font-size: 1.5rem;
+    color: white;
+    display: inline-block;
+    opacity: 0;
+    animation: typing 2s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+.section.line5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('line2.png') no-repeat center center;
+    padding: 20px;
+}
+
+/* Create a card-like structure for the text */
+.line5 h2 {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /*a hover effect to each paragraph */
+    .line5 h2:hover {
+        transform: scale(1.05);
+        box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /*curved corners and additional spacing */
+    .line5 h2:nth-child(1) {
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+    }
+
+    .line5 h2:nth-child(2) {
+        border-radius: 20px;
+    }
+
+    .line5 h2:nth-child(3) {
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+/*text Animation */
+.line5 h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+    .line5 h2:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .line5 h2:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .line5 h2:nth-child(3) {
+        animation-delay: 0.8s;
+    }
+
+/* fade-In Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
