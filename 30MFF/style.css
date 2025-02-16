@@ -92,7 +92,7 @@ html {
     position: absolute; /* Absolute positioning */
     position: absolute;
     top: 55%;
-    left: 40%;
+    left: 55%;
     transform: translate(-40%, 65px);
     text-align: center; /* Center text */
     transition: color 0.3s ease; /* Smooth color transition on hover */
@@ -133,7 +133,7 @@ img {
 
 .resource-button {
     position: absolute; /* Positions it absolutely within its nearest positioned ancestor */
-    top: 85%; /* Adjust vertical position */
+    top: 90%; /* Adjust vertical position */
     left: 87%; /* Center horizontally */
     transform: translateX(-58%); /* Corrects for the centering effect */
     font-size: 1rem;
