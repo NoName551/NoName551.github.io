@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routine of Feline Friends</title>
+
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <style>
+
+        body {
+            font-family: Georgia, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: black; /* Ensures all text is black */
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 60px;
+            font-weight: bold;
+            margin-top: 50px;
+            text-shadow: none; /* Removed text shadow */
+        }
+
+        /* General Paragraphs */
+        p {
+            font-size: 26px;
+            background-color: white; /* No background */
+            text-shadow: none; /* Removed white shadow */
+        }
+
+        /* Section styling */
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Images */
+        .cat-img {
+            width: 50vw;
+            max-width: 600px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .cat-img:hover {
+                transform: scale(1.1); /* Zoom effect on hover */
+            }
+
+        /* Fact Box */
+        .fact-box {
+            display: none;
+            background: white; /* White background */
+            color: black; /* Black text */
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+            max-width: 80%;
+            border: 1px solid lightgray; /* Optional: Light border for better visibility */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>The Lazy Life of Feline Royalty: A Cat’s Daily Routine</h1>
+    <p>Ever wondered what goes on in a cat’s daily life? Spoiler alert: it's mostly sleeping, lounging, and looking adorable.</p>
+
+
+    <div class="section" data-aos="fade-up">
+        <img class="cat-img" src="1.jpg" alt="Cat 1">
+        <p class="fact-box">🐱 Cats sleep an average of 13-16 hours a day!</p>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+        <img class="cat-img" src="2.jpg" alt="Cat 2">
+        <p class="fact-box">👂 Cats can rotate their ears 180 degrees!</p>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+        <img class="cat-img" src="3.jpg" alt="Cat 3">
+        <p class="fact-box">💓 A cat’s purr has healing properties!</p>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+        <img class="cat-img" src="4.jpg" alt="Cat 4">
+        <p class="fact-box">🏺 The world's oldest known pet cat was found in a 9,500-year-old grave.</p>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+        <img class="cat-img" src="5.jpg" alt="Cat 5">
+        <p class="fact-box">🐾 Cats can jump up to six times their length!</p>
+    </div>
+
+
+    
+
+    <script>
+        // AOS animations
+        AOS.init();
+
+        // fun fact when image is cliced
+        $(".cat-img").click(function () {
+            $(this).siblings(".fact-box").fadeToggle();
+        });
+
+        $("h1").after("<p id='intro-text'>Click on the images to uncover fun feline facts and learn why cats are the truly masters of relaxation! </p>");
+    </script>
+
+</body>
+</html>
