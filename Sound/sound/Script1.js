@@ -29,3 +29,16 @@ function animateGlow() {
 // Start the animation
 animateGlow();
 
+
+// Select the arrow element
+const arrow = document.getElementById('arrow-image');
+
+// Add a scroll event listener to the window
+window.addEventListener('scroll', () => {
+    // Check if the user has scrolled down
+    if (window.scrollY > 50) { // Adjust scroll threshold as needed
+        arrow.classList.add('hidden'); // Hide the arrow by adding the "hidden" class
+    } else {
+        arrow.classList.remove('hidden'); // Show the arrow if scrolled back up
+    }
+});
