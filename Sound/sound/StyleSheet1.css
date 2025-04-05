@@ -4,30 +4,43 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #000f;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.bgimage1, .bgimage2 {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.bgimage1 {
+    background-image: url('bg.png'); /* First background image */
+    position: relative;
+}
+
+.bgimage2 {
+    background-image: url('bg2.png'); /* Second background image */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Prevents scrollbars */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
 }
 
-.img-1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover; /* Ensures full coverage without distortion */
-}
-
-.img-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover; /* Ensures full coverage without distortion */
+.overlay h1 {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
 }
