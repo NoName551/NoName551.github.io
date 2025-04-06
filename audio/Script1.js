@@ -1,22 +1,32 @@
-// Select the glowing text element
+document.addEventListener("DOMContentLoaded", function () {
+    const arrow = document.getElementById("arrow-image");
+    const section2 = document.getElementById("section2");
+
+    arrow.addEventListener("click", function () {
+        section2.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+
+// glowing text element
 const glowingText = document.querySelector('.overlay span');
 
-// Initialize variables for controlling the glow effect
-let glowIntensity = 1; // Initial blur radius (reduced for subtle effect)
-let increasing = true; // Direction of the glow
+//variables for controlling the glow effect
+let glowIntensity = 1; // blur radius (reduced for subtle effect)
+let increasing = true; // direction of the glow
 
-// Function to animate the glow effect
+// animate the glow effect
 function animateGlow() {
-    // Update the blur radius based on the direction
+    // pudate the blur radius based on the direction
     if (increasing) {
-        glowIntensity += 0.05; // Slightly increase intensity
-        if (glowIntensity >= 2) increasing = false; // Reverse direction at max intensity
+        glowIntensity += 0.05; //  increase intensity
+        if (glowIntensity >= 2) increasing = false; // reverse direction at max intensity
     } else {
-        glowIntensity -= 0.05; // Slightly decrease intensity
-        if (glowIntensity <= 1) increasing = true; // Reverse direction at min intensity
+        glowIntensity -= 0.05; //  decrease intensity
+        if (glowIntensity <= 1) increasing = true; // reverse direction at min intensity
     }
 
-    // Apply the updated text-shadow style to create a subtle glow effect
+    // apply the updated text-shadow style to create a subtle glow effect
     glowingText.style.textShadow = `
         0 0 ${glowIntensity}px #FFD700,
         0 0 ${glowIntensity * 1.5}px #FFD700,
@@ -26,7 +36,7 @@ function animateGlow() {
     requestAnimationFrame(animateGlow);
 }
 
-// Start the animation
+// start the animation
 animateGlow();
 
 
@@ -35,13 +45,16 @@ const arrow = document.getElementById('arrow-image');
 
 // Add a scroll event listener to the window
 window.addEventListener('scroll', () => {
-    // Check if the user has scrolled down
-    if (window.scrollY > 50) { // Adjust scroll threshold as needed
+    // Check if the user has scrolled past bgimage1
+    const bgImage1Height = document.querySelector('.bgimage1').offsetHeight;
+
+    if (window.scrollY > bgImage1Height - 50) { // Adjust threshold as needed
         arrow.classList.add('hidden'); // Hide the arrow by adding the "hidden" class
     } else {
         arrow.classList.remove('hidden'); // Show the arrow if scrolled back up
     }
 });
+
 
 
 

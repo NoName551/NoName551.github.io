@@ -36,16 +36,6 @@ html, body {
     align-items: center; /* Center vertically */
 }
 
-.bgimage3 {
-    width: 100vw;
-    height: 100vh;
-    background: url('bg2.png') no-repeat center center;
-    background-size: cover;
-    display: flex; /* flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
 .overlay {
     position: absolute;
     top: 0;
@@ -143,12 +133,17 @@ html, body {
     font-size: 1rem; /* Adjust font size */
     color: white; /* Make text white */
     margin-bottom: 5px; /* Add spacing between text and arrow */
-    transform: translateX(-0px); /* Shift text slightly to the left */
 }
 
 .arrow-image {
     width: 30px; /* Adjust arrow size */
     height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+}
+
+/* Hidden Class for Arrow */
+.hidden {
+    display: none; /* Hide the arrow when scrolled down */
 }
 
 .glow-circle {
