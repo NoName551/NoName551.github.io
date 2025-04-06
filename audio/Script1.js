@@ -42,3 +42,37 @@ window.addEventListener('scroll', () => {
         arrow.classList.remove('hidden'); // Show the arrow if scrolled back up
     }
 });
+
+
+
+//progress bar 
+const audio = document.getElementById("audio");
+const progressBar = document.getElementById("progress-bar");
+const progressContainer = document.querySelector(".progress-container");
+const playButton = document.querySelector(".play-button");
+
+// update progress as audio plays
+audio.addEventListener("timeupdate", function () {
+    if (audio.duration) {
+        const progressPercent = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progressPercent + "%";
+    }
+});
+
+// can click anywhere on the progress bar to seek
+progressContainer.addEventListener("click", function (e) {
+    const clickPosition = e.offsetX / this.offsetWidth;
+    const seekTime = clickPosition * audio.duration;
+    audio.currentTime = seekTime;
+});
+
+// Play/pause toggle
+playButton.addEventListener("click", function () {
+    if (audio.paused) {
+        audio.play();
+        playButton.innerHTML = "&#10074;&#10074;"; // Pause symbol
+    } else {
+        audio.pause();
+        playButton.innerHTML = "&#9658;"; // Play symbol
+    }
+});
