@@ -62,7 +62,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Prevent interaction with snowflakes */
+    pointer-events: none; /* prevent interaction with snowflakes */
     background-image: radial-gradient(white 1px, transparent 1px), radial-gradient(white 2px, transparent 2px), radial-gradient(white 3px, transparent 3px); /* Smaller snowflakes */
     background-size: 100px 100px, 150px 150px, 200px 200px; /* Spread out the snowflakes for less frequency */
 }
