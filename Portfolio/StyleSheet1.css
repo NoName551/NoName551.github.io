@@ -1,11 +1,15 @@
 ﻿html, body {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background: #000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #000; /* Black background */
 }
 
-.video-bg {
+#bg-video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -15,18 +19,68 @@
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    z-index: -1;
+    z-index: -2;
     pointer-events: none;
-    background: #000; /* fallback background */
 }
 
-.content {
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.65); /* Adjust for more/less darkness */
+    z-index: -1;
+}
+
+main {
     position: relative;
     z-index: 1;
-    color: #fff;
-    text-align: center;
-    padding-top: 50px;
-    background: rgba(0,0,0,0.3); /* optional, for contrast */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px 24px 24px;
 }
 
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.02em;
+}
 
+.subtitle {
+    font-size: 1.3rem;
+    color: #aaa;
+    margin-bottom: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 1em 0;
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+    a:hover {
+        color: #ff0;
+    }
