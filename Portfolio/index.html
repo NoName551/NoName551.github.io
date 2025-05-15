@@ -18,8 +18,27 @@
             </video>
         </div>
         <div id="typewriter"></div>
-        <button class="corner-btn" aria-label="Menu or Next">❀˖°</button>
-        <button class="hamburger-btn" aria-label="Menu">☰</button>
+        <button class="corner-btn" aria-label="Menu or Next" id="toggleEffect">❀˖°</button>
+        <canvas id="particleCanvas"></canvas>
+        <!-- Hamburger Icon -->
+        <button class="hamburger-btn" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Fullscreen Overlay Menu -->
+        <div class="fullscreen-menu" id="fullscreenMenu">
+            <nav>
+                <ul>
+                    <li><a href="#second-frame">About</a></li>
+                    <li><a href="#third-frame">Work Experience</a></li>
+                    <li><a href="#fifth-frame">Key Projects</a></li>
+                    <li><a href="#hero-contact">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
     </section>
 
 
@@ -66,8 +85,7 @@
                 <div class="notepad-content">
                     <p>
                         About Me<br>
-                        I'm an undergraduate Computer Engineering student at New York University Abu Dhabi. A field within computer engineering that truly captivates me is health applications—especially those that leverages AI, and microcontrollers. What draws me in is the deeply human aspect of it: knowing how many people, both close to me and complete strangers, live with different conditions, seeking prevention and treatment, doing everything they can just to live a little longer.
-                        That reality has driven my passion toward this space—because here, my knowledge can directly impact someone's life. Whether it's through building AI systems for healthcare or designing a device with microcontrollers to support patients, these areas feel meaningful and exciting to me. <br />
+                        I'm an undergraduate Computer Engineering student at New York University Abu Dhabi. A field within computer engineering that truly captivates me is health applications—especially those that leverages AI, and microcontrollers. What draws me in is the deeply human aspect of it: knowing how many people, both close to me and complete strangers, live with different conditions, seeking prevention and treatment, doing everything they can just to live a little longer. That reality has driven my passion toward this space—because here, my knowledge can directly impact someone's life. <br />
 
                         Beyond the technical world, I absolutely love music. I listen to a lot of indie rock, 90s and early 2000s pop, jazz, city pop, and Sinhala songs that carry waves of nostalgia, some from my own childhood, and others from my parents' days that I can only imagine through sound.
                         I also adore films. The cinephile in me often drawn to movies like The Shawshank Redemption, In the Mood for Love, Good Will Hunting, Fight Club, and anything by Wong Kar-wai, and ones that challenge societal norms and capture the rawness of life. I also enjoy dressing up and styling myself, especially with pieces that carry a vintage or retro vibe. I find joy in curating outfits with unique pieces of clothes/accessories that echo eras gone by. <br />
@@ -153,7 +171,7 @@
             <div class="projects-list">
                 <!-- Project 1: Image left, text right -->
                 <div class="project-row">
-                    <a href=" = " https: //noname551.github.io/30MFF/" class="shake-link" target="_blank">
+                    <a href=" = " NoName551.github.io /30MFF/" class="shake-link" target="_blank">
                         <img src="1.png" alt="Project 1" class="project-image" />
                     </a>
                     <div class="project-desc">
@@ -204,7 +222,7 @@
             <div class="projects-list">
                 <!-- Project 1: Image right, text left -->
                 <div class="project-row reverse">
-                    <a href=" https://mah9994.github.io/Video/" class="shake-link" target="_blank">
+                    <a href="https://mah9994.github.io/Video/" class="shake-link" target="_blank">
                         <img src="4.png" alt="Project 4" class="project-image" />
                     </a>
                     <div class="project-desc">
@@ -214,14 +232,68 @@
                         </p>
                     </div>
                 </div>
-                <h1>Say A Simple Hello! Let's Connect & Collobrate"</h1>
+                <div class="project-row1">
+                    <a href="https://github.com/NoName551/Machine-Learning" class="shake-link" target="_blank">
+                        <img src="cnn.png" alt="CNN" class="project-image-small1" />
+                    </a>
+                    <div class="project-desc1">
+                        <h3>Machine Learning Projects</h3>
+                        <p>
+                            Developed a Convolutional Neural Network (CNN) from scratch using NumPy to classify handwritten digits from the MNIST dataset.
+                            Also implemented a Generative Adversarial Network (GAN) without using deep learning libraries to generate synthetic images through adversarial training.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
     </section>
 
-    <section id="contact-frame">
-        <h1>Say A Simple Hello! Let's Connect & Collobrate"</h1>
+
+    <section id="hero-contact">
+        <section id="contact-frame">
+            <div class="notepad-box contact-notepad">
+                <div class="notepad-titlebar1">
+                    <span class="notepad-title1">Contact - Notepad</span>
+                    <span class="notepad-window-controls">
+                        <span class="notepad-btn">_</span>
+                        <span class="notepad-btn">▢</span>
+                        <span class="notepad-btn">✕</span>
+                    </span>
+                </div>
+                <div class="notepad-menu1">
+                    <span>File</span>
+                    <span>Edit</span>
+                    <span>Search</span>
+                    <span>Help</span>
+                </div>
+                <div class="notepad-content1">
+                    <h2 class="contact-title">Say A Simple Hello!</h2>
+                    <p class="contact-subtitle">
+                        If you’re interested in collaborating, discussing creative ideas, or simply want to connect! <span style="font-size:1.1em;">🫧𓇼𓏲*ੈ✩‧₊˚🎐</span>
+                    </p>
+                    <form class="contact-form" autocomplete="off">
+                        <input type="text" placeholder="Your Name" name="name" required />
+                        <input type="email" placeholder="Your Email" name="email" required />
+                        <textarea placeholder="Your Message" name="message" rows="5" required></textarea>
+                        <button type="submit" class="contact-btn">Send Message</button>
+                    </form>
+                    <div class="contact-socials">
+                        <a href="https://github.com/NoName551/NoName551.github.io" target="_blank" aria-label="GitHub">
+                            <img src="github.png" alt="GitHub" />
+                        </a>
+                        <a href="www.linkedin.com/in/asini-subanya" target="_blank" aria-label="LinkedIn">
+                            <img src="linkedin.png" alt="LinkedIn" />
+                        </a>
+                        <a href="https://www.instagram.com/asini.33?igsh=d2d0YnV5ZnQxa2o2&utm_source=qr" target="_blank" aria-label="Instagram">
+                            <img src="ig.png" alt="Instagram" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
+
 </body>
 </html>
 

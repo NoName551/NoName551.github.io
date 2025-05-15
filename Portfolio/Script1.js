@@ -15,6 +15,106 @@ function typeWriter() {
     }
 }
 
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('fullscreenMenu');
+
+hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('open');
+    // Accessibility
+    hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+});
+
+// Optional: close menu when clicking a link
+menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        menu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+    });
+});
+
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+document.body.appendChild(canvas);
+
+canvas.style.position = "fixed";
+canvas.style.top = "0";
+canvas.style.left = "0";
+canvas.style.zIndex = "1000";
+canvas.style.pointerEvents = "none";
+
+let particles = [];
+let animationActive = false;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+function drawSquare(x, y, size, alpha, angle) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(angle);
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = "#a855f7"; // purple color
+  ctx.fillRect(-size / 2, -size / 2, size, size);
+  ctx.restore();
+  ctx.globalAlpha = 1;
+}
+
+function animateParticles() {
+  if (!animationActive) return;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const now = Date.now();
+  particles = particles.filter(p => {
+    const age = now - p.created;
+    if (age > 1000) return false;
+
+    p.x += p.vx;
+    p.y += p.vy;
+    p.alpha = 1 - age / 1000;
+    p.angle += 0.1;
+
+    drawSquare(p.x, p.y, p.size, p.alpha, p.angle);
+    return true;
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+document.querySelector(".corner-btn").addEventListener("click", () => {
+  animationActive = !animationActive;
+  if (animationActive) {
+    canvas.style.display = "block";
+    document.addEventListener("mousemove", onMouseMove);
+    animateParticles();
+  } else {
+    canvas.style.display = "none";
+    document.removeEventListener("mousemove", onMouseMove);
+  }
+});
+
+function onMouseMove(e) {
+  for (let i = 0; i < 3; i++) {
+    particles.push({
+      x: e.clientX,
+      y: e.clientY,
+      vx: (Math.random() - 0.5) * 2,
+      vy: (Math.random() - 0.5) * 2,
+      size: 12 + Math.random() * 10,
+      alpha: 1,
+      angle: Math.random() * Math.PI * 2,
+      created: Date.now()
+    });
+  }
+}
+
+
+
 window.onload = function () {
     typeWriter();
 

@@ -7,6 +7,21 @@
     scroll-behavior: smooth; /* For smooth scrolling */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: none; /* Initially hidden */
+}
+
 section {
     width: 100%;
     height: 100vh; /* Full viewport height for each section */
@@ -81,22 +96,85 @@ section {
 }
 
 .hamburger-btn {
-    position: absolute;
-    top: 32px;
-    left: 32px;
-    z-index: 10;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 3rem;
-    cursor: pointer;
-    transition: transform 1.2s ease;
-    user-select: none;
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 101;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
-.hamburger-btn:hover {
-    transform: rotate(360deg);
+.hamburger-btn .bar {
+  width: 36px;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.4s;
+  display: block;
 }
+
+.hamburger-btn.active .bar:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+.hamburger-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active .bar:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Fullscreen overlay menu */
+.fullscreen-menu {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(10,10,10,0.98);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.fullscreen-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.fullscreen-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.fullscreen-menu nav ul li {
+  margin: 2rem 0;
+}
+
+.fullscreen-menu nav ul li a {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Saira', 'Share Tech', 'Consolas', monospace, sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+
+.fullscreen-menu nav ul li a:hover {
+  color: #cbc3e3;
+}
+
 
 /* Show the second frame when the hidden class is removed */
 .hidden {
@@ -279,7 +357,7 @@ section {
 .notepad-content {
     flex: 1;
     padding: 12px 8px;
-    font-size: 15px;
+    font-size: 16px;
     color: #222;
     overflow-y: auto;
     background: #bdbdbd;
@@ -326,7 +404,7 @@ section {
     white-space: nowrap;
     font-size: 3vw;
     opacity: 0.12;
-    color: #00ffe7;
+    color: #645394;
     animation: scroll-bg 40s linear infinite;
     min-width: 200vw; /* Ensure enough width for smooth scroll */
 }
@@ -486,6 +564,26 @@ section {
     color: #000632;
 }
 
+.event-desc-top {
+    background: rgba(20,20,30,0.92);
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px #CBC3E3;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    min-width: 120px;
+    text-align: center;
+    font-family: 'Saira', 'Share Tech', 'Consolas', monospace, sans-serif;
+    transition: background 0.2s;
+}
+
+.timeline-event:hover .event-desc-top {
+    background: #CBC3E3;
+    color: #000632;
+}
+
+
 
 #fourth-frame {
     min-height: 100vh;
@@ -596,6 +694,43 @@ section {
     text-align: center;
 }
 
+.project-row1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.project-image-small1 {
+  width: 250px;        /* Adjust size as needed */
+  height: auto;
+  border-radius: 12px; /* Optional: rounded corners */
+  box-shadow: 0 2px 8px #0002;
+}
+
+.project-desc1 {
+  flex: 1;
+  color: #fff;  
+  font-size: 1.1rem;
+  font-family: 'Saira', 'Share Tech', monospace, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .project-row1 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-image-small1 {
+    width: 70vw;
+    max-width: 250px;
+    margin-bottom: 1em;
+  }
+  .project-desc1 {
+    text-align: center;
+  }
+}
+
+
 #seventh-frame{
     min-height: 100vh;
     width: 100vw;
@@ -603,31 +738,200 @@ section {
     padding-top: 14vh; /* adjust as needed */
 }
 
-#key-projects-7{
+#key-projects-7 {
     text-align: center;
+    padding-bottom: 5vh;
 }
 
-#contact-frame {
-  background: #0c1933; /* dark blue, or use #000 for black */
-  padding: 10vh 0;
+
+.skills-section {
+  padding: 80px 20px;
+  background-color: #f0f0f0; /* or any color that suits your aesthetic */
   text-align: center;
 }
 
-#contact-frame h1 {
-  color: #eabfff;
-  font-family: 'Saira', 'Share Tech', monospace, sans-serif;
-  font-size: 2.3rem;
+.skills-title {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-family: 'Courier New', monospace;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skills-list span {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Courier New', monospace;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+#contact-frame {
+  background: #000;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0vh 0 8vh 0;
+}
+
+.contact-notepad {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0b1e3c 90%, #0a1931 100%);
+    box-shadow: 0 8px 48px #645394, 0 1.5px 0 #645394 inset;
+    border: 2px solid #645394;
+    font-family: 'Share Tech', 'Saira', monospace, sans-serif;
+    overflow: hidden;
+}
+
+.notepad-titlebar1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a1931;
+    color: #645394;
+    padding: 0.5em 1em;
+    font-size: 1.1rem;
+    border-bottom: 1.5px solid #645394;
+}
+
+.notepad-title1 {
+  font-weight: bold;
   letter-spacing: 0.04em;
-  margin: 0;
 }
 
-#eigth-frame {
-    min-height: 100vh;
-    width: 100vw;
-    background-color: #000;
-    padding-top: 14vh; /* adjust as needed */
+.notepad-window-controls .notepad-btn {
+    margin-left: 0.4em;
+    cursor: pointer;
+    color: #645394;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+.notepad-window-controls .notepad-btn:hover {
+  color: #001a4d;
 }
 
-#key-projects-8{
-    text-align: center;
+.notepad-menu1 {
+    display: flex;
+    gap: 1.2em;
+    background: #0a1931;
+    color: #ffffff;
+    font-size: 0.97rem;
+    padding: 0.4em 1em;
+    border-bottom: 1.5px solid #645394;
+    user-select: none;
 }
+
+.notepad-content1 {
+  padding: 2.2em 1.5em 1.5em 1.5em;
+  background: transparent;
+}
+
+.contact-title {
+  color: #CBC3E3;
+  font-size: 2rem;
+  margin-bottom: 0.7em;
+  letter-spacing: 0.03em;
+  font-family: 'Share Tech', 'Saira', monospace, sans-serif;
+}
+
+.contact-subtitle {
+  color: #ffffff;
+  font-size: 1.07rem;
+  margin-bottom: 2em;
+  font-family: 'Saira', 'Share Tech', monospace, sans-serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 2.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: black;
+  border: 2px solid #645394;
+  border-radius: 10px;
+  padding: 1em 1.1em;
+  font-size: 1.06rem;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #645394;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #001a4d;
+  box-shadow: 0 4px 18px #001a4d, 0 0 12px #001a4d;
+}
+
+.contact-btn {
+  background: #00001C;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 1em 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-top: 0.6em;
+  box-shadow:0 4px 18px #001a4d;
+  letter-spacing: 0.03em;
+}
+.contact-btn:hover {
+  background: #001a4d;
+  color: #fff;
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 2.1rem;
+  color: #ffffff;
+  margin-top: 1.5rem;
+}
+.contact-socials img {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(0.2) brightness(1.1) drop-shadow(0 0 6px #001a4d);
+  transition: filter 0.2s, transform 0.2s;
+}
+.contact-socials a:hover img {
+  filter: grayscale(0) brightness(1.3) drop-shadow(0 0 10px #001a4d);
+  transform: scale(1.13) rotate(-6deg);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-notepad {
+    max-width: 99vw;
+    padding: 0 0.5vw;
+  }
+  .contact-title {
+    font-size: 1.4rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+    padding: 0.8em 0.7em;
+  }
+}
+
+
+
